@@ -58,11 +58,4 @@ public class Recursion {
             return cadena.charAt(cadena.length() - 1) + invertirCadena(cadena.substring(0, cadena.length() - 1));
         }
     }
-
-    public static void main(String[] args) {
-        // pruebas rápidas
-        System.out.println("Fibonacci de 12 = " + fibonacci(12));
-        System.out.println("Suma de dígitos de 123 = " + sumaDigitos(123));
-        System.out.println("Invertir 'hola' = " + invertirCadena("hola"));
-    }     
 }
