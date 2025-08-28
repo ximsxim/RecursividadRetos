@@ -46,9 +46,23 @@ public class Recursion {
         }
     }
 
+    /**
+     * Función que invierte una cadena de texto usando recursión.
+     * @param cadena texto original
+     * @return texto invertido
+     */
+    public static String invertirCadena(String cadena){
+        if (cadena == null || cadena.length() <= 1) { 
+            return cadena;
+        } else {
+            return cadena.charAt(cadena.length() - 1) + invertirCadena(cadena.substring(0, cadena.length() - 1));
+        }
+    }
+
     public static void main(String[] args) {
-        // puedes probar aquí si quieres
+        // pruebas rápidas
         System.out.println("Fibonacci de 12 = " + fibonacci(12));
         System.out.println("Suma de dígitos de 123 = " + sumaDigitos(123));
+        System.out.println("Invertir 'hola' = " + invertirCadena("hola"));
     }     
 }

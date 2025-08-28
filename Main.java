@@ -11,18 +11,14 @@ public class Main {
             System.out.println("1) Calcular Factorial");
             System.out.println("2) Calcular Fibonacci");
             System.out.println("3) Suma de dígitos");
-            System.out.println("4) Salir");
+            System.out.println("4) Invertir cadena");
+            System.out.println("5) Salir");
             System.out.print("Elige opción: ");
 
             try {
                 opcion = sc.nextInt();
-            } catch (InputMismatchException e) {
-                System.out.println("Entrada inválida.");
                 sc.nextLine(); 
-                continue;
-            }
 
-            try {
                 if (opcion == 1) {
                     System.out.print("Número: ");
                     long n = sc.nextLong();
@@ -35,7 +31,7 @@ public class Main {
                     System.out.print("Número: ");
                     long n = sc.nextLong();
                     if (n < 0) {
-                        System.out.println(" Debe ser >= 0.");
+                        System.out.println("Debe ser >= 0.");
                     } else {
                         System.out.println("Fibonacci = " + Recursion.fibonacci(n));
                     }
@@ -47,15 +43,19 @@ public class Main {
                     } else {
                         System.out.println("Suma de dígitos = " + Recursion.sumaDigitos(n));
                     }
-                } else if (opcion != 4) {
-                    System.out.println(" Opción inválida.");
+                } else if (opcion == 4) {
+                    System.out.print("Texto: ");
+                    String texto = sc.nextLine();
+                    System.out.println("Invertido = " + Recursion.invertirCadena(texto));
+                } else if (opcion != 5) {
+                    System.out.println("Opción inválida.");
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Entrada inválida. Escribe un número entero.");
+                System.out.println("Entrada inválida.");
                 sc.nextLine(); 
             }
 
-        } while (opcion != 4);
+        } while (opcion != 5);
 
         sc.close();
         System.out.println("Saliendo...");
